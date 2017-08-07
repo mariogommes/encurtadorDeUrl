@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Ranking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Shortsite.Models.RankingModel
+
+<h2>Ranking</h2> Sites mais visitados
+<div class="jumbotron">
+    <ul id="rankingList">
+        @{ 
+            foreach (var item in Model.Ranking)
+            {
+                <li>@item.Name</li>
+            }
+        }
+    </ul>
+</div>

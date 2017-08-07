@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Shortsite";
+}
+
+@model Shortsite.Models.SiteModel
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            @Html.Partial("Create")
+        </div>
+        <div class="col-md-4" id="output">
+            @{
+                if (!String.IsNullOrEmpty(Model.Url))
+                {
+                    <ul style="color:black;list-style: none">
+                        <li>alias: @Model.Alias</li>
+                        <li>Url: @Model.Url</li>
+                        <li>statistics: @Model.Time ms</li>
+                    </ul>
+                }
+                if (!String.IsNullOrEmpty(Model.Error))
+                {
+                    <span style="color:red">@Model.Error</span>
+                }
+            }
+        </div>
+    </div>
+</div>
